@@ -3,10 +3,10 @@
 
 
 
-$servername = "sql212.epizy.com";
-$username = "epiz_20708161";
-$password = "TFyNhU4qO3";
-$dbname = "epiz_20708161_BluesStatistics";
+$servername = "bluesstatistics3380.cvkr0vitka5o.us-east-1.rds.amazonaws.com:3306";
+$username = "cs3380";
+$password = "blues3380";
+$dbname = "BluesStatistics3380";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
