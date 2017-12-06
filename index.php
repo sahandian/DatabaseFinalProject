@@ -5,12 +5,12 @@ $password = "TFyNhU4q03";
 $dbname = "epiz_20708161_BluesStatistics";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-/* Check connection
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "<h1>Connected successfully</h1>";
-//$sql = "SELECT * FROM tasks";
+/*$sql = "SELECT * FROM tasks";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
