@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
     }
 } else {
     echo "<p>0 results</p>";
-}
+} //test
 $conn->close();
 ?>
+ 
