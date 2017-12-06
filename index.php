@@ -14,12 +14,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "<h1>Connected successfully</h1>";
-$sql = "SELECT * FROM tasks";
+$sql = "SELECT * FROM St.louis blues";
 $result = $conn->query($sql);
+
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<p>id: " . $row["id"]. " - Title: " . $row["title"]. " -Description: " . $row["description"]. "</p>";
+        echo "<p>id: " . $row["Name"] . "</p>";
     }
 } else {
     echo "<p>0 results</p>";
