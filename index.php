@@ -3,9 +3,9 @@
 
 
 
-$servername = "sql212.byetcluster.com";
+$servername = "sql212.epizy.com";
 $username = "epiz_20708161";
-$password = "TFyNhU4q03";
+$password = "TFyNhU4qO3";
 $dbname = "epiz_20708161_BluesStatistics";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
