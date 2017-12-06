@@ -1,6 +1,4 @@
 <?php
-echo "<h1>Connected successfully</h1>";
-/*
 
 
 
@@ -25,6 +23,6 @@ if ($result->num_rows > 0) {
     }
 } else {
     echo "<p>0 results</p>";
-}*/
-//$conn->close();
+}
+$conn->close();
 ?>
