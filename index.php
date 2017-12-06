@@ -3,7 +3,7 @@
 
 
 
-$servername = "sql212.epizy.com";
+$servername = "sql212.byetcluster.com";
 $username = "epiz_20708161";
 $password = "TFyNhU4q03";
 $dbname = "epiz_20708161_BluesStatistics";
