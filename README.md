@@ -7,6 +7,9 @@ Kevin Hunkins
 Daniel Weiss
 Hayden Harrill
 Daniel Clubb
+Zachary Pierucci
+Mitchell Hoffmann
+Quinn Rydland
 
 
 Players(Name,Team, GP, G, A, P, +/-, PIM, PPG, PPP, SHG, SHP, GWG, OTG, Shots)
