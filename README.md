@@ -8,4 +8,3 @@ Daniel Weiss
 Hayden Harrill
 Daniel Clubb
 
-URL: http://danielsweiss.com/databasesFinal/
