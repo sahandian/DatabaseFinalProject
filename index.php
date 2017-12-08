@@ -235,7 +235,7 @@ $conn->close();
         
         </table>
         
-        
+        <form action="" method="post">
                 <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -298,12 +298,27 @@ echo "<td>" . $row['SHP'] . "</td>" ;
 echo "<td>" . $row['GWG'] . "</td>" ;
 echo "<td>" . $row['OTG'] . "</td>" ;
 echo "<td>" . $row['Shots'] . "</td>" ;
+echo '<td><input type="submit" name="deleteItem" value="'.$row['playerId'].'" /></td>"';
 echo "</tr>";
+        echo "</form>";
 
     }
 } else {
     echo "<p>0 results</p>";
 } //test
+                
+if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
+{
+  // here comes your delete query: use $_POST['deleteItem'] as your id
+  $delete = $_POST['deleteItem']
+   $sql = "DELETE FROM `stats` where `playerId` = '$delete'"; 
+
+
+}
+                
+                
+                
+                
 $conn->close();
 ?>
                 
@@ -324,6 +339,8 @@ $conn->close();
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    
+    
 
 </body>
 
