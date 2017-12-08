@@ -16,14 +16,15 @@ if(isset($_POST['update'])){
     $OTG = $_POST['OTG'];
     $Shots = $_POST['Shots'];
     
-    $sql = mysql_query("UPDATE stats SET GP="$GP",G="$G",A="$A",P="$P",PM="$PM",PIM="$PIM",PPG="$PPG",PPP="$PPP",SHG="$SHG",SHP="$SHP",GWG="$GWG",OTG="$OTG",Shots="$Shots" WHERE playerId="$playerId"");
+    $sql = mysqli_query("UPDATE stats SET Name='$Name', GP='$GP',G='$G',A='$A',P='$P',PM='$PM',PIM='$PIM',PPG='$PPG',PPP='$PPP',SHG='$SHG',SHP='$SHP',GWG='$GWG',OTG='$OTG',Shots='$Shots' WHERE playerId='$playerId'");
     
-    $retrieval = mysql_query($sql, $conn);
+    $retrieval = mysqli_query($sql, $conn);
     if(! $retrieval){
-        die('Could not update data:' . mysql_error());
+        die('Could not update data:' . mysqli_error());
     }
     echo "Updated data successfully\n";
     
 
 
 }
+?>
