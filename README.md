@@ -19,6 +19,7 @@ Players(Name,Team, GP, G, A, P, +/-, PIM, PPG, PPP, SHG, SHP, GWG, OTG, Shots)
 Teams(Team, City, TeamCode, GamesPlayed, Points, Wins, Losess, OvertimeLosses, Division, Conferences, StanleyCups)
 
 ##ERD
+
 ![erd of database](https://github.com/sahandian/DatabaseFinalProject/blob/master/Screen%20Shot%202017-12-08%20at%201.03.36%20AM.png?raw=true"ERD")
 
 ##Crud
