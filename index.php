@@ -235,7 +235,7 @@ $conn->close();
         
         </table>
         
-        
+        <form action="" method="post">
                 <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -300,6 +300,7 @@ echo "<td>" . $row['OTG'] . "</td>" ;
 echo "<td>" . $row['Shots'] . "</td>" ;
 echo '<td><input type="submit" name="deleteItem" value="'.$row['playerId'].'" /></td>"';
 echo "</tr>";
+        echo "</form>";
 
     }
 } else {
