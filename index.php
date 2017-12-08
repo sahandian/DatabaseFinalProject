@@ -148,12 +148,15 @@ echo "</tr>";
 } else {
     echo "<p>0 results</p>";
 } //test
+                
+
 $conn->close();
 ?>
                 
             </tbody>
         </table>
         
+        <form action="" method="post">
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -177,6 +180,7 @@ $conn->close();
                     <th>GWG</th>
                     <th>OTG</th>
                     <th>SHOTS</th>
+                    <th>Delete</th>
                 </tr>
                 
 <?php
@@ -207,7 +211,7 @@ echo "<td>" . $row['GP'] . "</td>" ;
 echo "<td>" . $row['G'] . "</td>" ;
 echo "<td>" . $row['A'] . "</td>" ;
 echo "<td>" . $row['P'] . "</td>" ;
-echo "<td>" . $row['+/-'] . "</td>" ;
+echo "<td>" . $row['PM'] . "</td>" ;
 echo "<td>" . $row['PIM'] . "</td>" ;
 echo "<td>" . $row['PPG'] . "</td>" ;
 echo "<td>" . $row['PPP'] . "</td>" ;
@@ -216,13 +220,26 @@ echo "<td>" . $row['SHP'] . "</td>" ;
 echo "<td>" . $row['GWG'] . "</td>" ;
 echo "<td>" . $row['OTG'] . "</td>" ;
 echo "<td>" . $row['Shots'] . "</td>" ;
+echo '<td><input type="submit" name="deleteItem" value="'.$row['playerId'].'" /></td>"';
 echo "</tr>";
 
     }
 } else {
     echo "<p>0 results</p>";
 } //test
+
+if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
+{
+  // here comes your delete query: use $_POST['deleteItem'] as your id
+   $delete = $_POST['deleteItem'];
+   $sql1 = "DELETE FROM `stats` where `playerId` = '$delete'"; 
+}
+
+$conn->query($sql1); 
 $conn->close();
+sleep(2);
+header("refresh:2; url=index.php");
+
 ?>
                 
                 
@@ -234,6 +251,8 @@ $conn->close();
         
         
         </table>
+        </form>
+        
         
         <form action="" method="post">
                 <table class="table table-bordered table-striped table-hover">
@@ -259,6 +278,7 @@ $conn->close();
                     <th>GWG</th>
                     <th>OTG</th>
                     <th>SHOTS</th>
+                    <th>Delete</th>
                 </tr>
                 
 <?php
@@ -289,7 +309,7 @@ echo "<td>" . $row['GP'] . "</td>" ;
 echo "<td>" . $row['G'] . "</td>" ;
 echo "<td>" . $row['A'] . "</td>" ;
 echo "<td>" . $row['P'] . "</td>" ;
-echo "<td>" . $row['+/-'] . "</td>" ;
+echo "<td>" . $row['PM'] . "</td>" ;
 echo "<td>" . $row['PIM'] . "</td>" ;
 echo "<td>" . $row['PPG'] . "</td>" ;
 echo "<td>" . $row['PPP'] . "</td>" ;
@@ -300,26 +320,22 @@ echo "<td>" . $row['OTG'] . "</td>" ;
 echo "<td>" . $row['Shots'] . "</td>" ;
 echo '<td><input type="submit" name="deleteItem" value="'.$row['playerId'].'" /></td>"';
 echo "</tr>";
-        echo "</form>";
 
     }
 } else {
     echo "<p>0 results</p>";
 } //test
                 
+
 if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
 {
   // here comes your delete query: use $_POST['deleteItem'] as your id
-  $delete = $_POST['deleteItem']
-   $sql = "DELETE FROM `stats` where `playerId` = '$delete'"; 
-
-
+   $delete = $_POST['deleteItem'];
+   $sql1 = "DELETE FROM `stats` where `playerId` = '$delete'"; 
 }
-                
-                
-                
-                
+                $conn->query($sql1); 
 $conn->close();
+header("refresh:2; url=index.php");
 ?>
                 
                 
@@ -331,6 +347,93 @@ $conn->close();
         
         
         </table>
+        </form>
+        
+        <div class="container">
+        <div class="border text-center" style="float: left; width: 50%">
+            <h1>ADD A PLAYER</h1>
+        <form action="insert.php" method="post" id="add">
+            <div style="float: left; width: 50%">
+            <h5>Name: </h5><input type="text" name="name">
+                
+            <h5>Team: </h5><input type="text" name="Team">
+            
+            <h5>GP: </h5><input type="text" name="GP">
+            
+            <h5>G: </h5><input type="text" name="G">
+            
+            <h5>A: </h5><input type="text" name="A">
+            <br/>
+            <h5>PTS: </h5><input type="text" name="PTS">
+            
+            <h5>+/-: </h5><input type="text" name="PM">
+            
+            <h5>PIM: </h5><input type="text" name="PIM">
+            </div>
+            
+            <h5>PPG: </h5><input type="text" name="PPG">
+            <br/>
+            <div style="float: right; width: 50%">
+            <h5>PPP: </h5><input type="text" name="PPP">
+            <h5>SHP: </h5><input type="text" name="SHP">
+            
+            <h5>SHG: </h5><input type="text" name="SHG">
+            
+            <h5>GWG: </h5><input type="text" name="GWG">
+            
+            <h5>OTG: </h5><input type="text" name="OTG">
+            
+            <h5>SHOTS: </h5><input type="text" name="Shots">
+            <br/>
+                <div style="padding: 10px;">
+                <button type="submit" form="add" value="Submit" class="btn-success" >Add Player</button>
+                    </div>
+            </div>
+        </form>
+        </div>
+        
+        <div class="border text-center" style="float: right; width: 50%">
+            <h1>UPDATE A PLAYER</h1>
+        <form action="update.php" method="POST" id="update">
+            <div style="float: left; width: 50%">
+            <h5>Name: </h5><input type="text" name="name">
+                
+            <h5>Team: </h5><input type="text" name="Team">
+            
+            <h5>GP: </h5><input type="text" name="GP">
+            
+            <h5>G: </h5><input type="text" name="G">
+            
+            <h5>A: </h5><input type="text" name="A">
+            <br/>
+            <h5>PTS: </h5><input type="text" name="PTS">
+            
+            <h5>+/-: </h5><input type="text" name="PM">
+            
+            <h5>PIM: </h5><input type="text" name="PIM">
+            </div>
+            
+            <h5>PPG: </h5><input type="text" name="PPG">
+            <br/>
+            <div style="float: right; width: 50%">
+            <h5>PPP: </h5><input type="text" name="PPP">
+            <h5>SHP: </h5><input type="text" name="SHP">
+            
+            <h5>SHG: </h5><input type="text" name="SHG">
+            
+            <h5>GWG: </h5><input type="text" name="GWG">
+            
+            <h5>OTG: </h5><input type="text" name="OTG">
+            
+            <h5>SHOTS: </h5><input type="text" name="Shots">
+            <br/>
+                <div style="padding: 10px;">
+                <button type="submit" form="update" value="Submit" class="btn-success" >Update Player</button>
+                    </div>
+            </div>
+        </form>
+        </div>
+        </div>
     </div>
     
     
@@ -339,8 +442,6 @@ $conn->close();
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    
-    
 
 </body>
 
