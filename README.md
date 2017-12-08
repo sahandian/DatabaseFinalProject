@@ -8,3 +8,6 @@ Daniel Weiss
 Hayden Harrill
 Daniel Clubb
 
+
+Players(Name,Team, GP, G, A, P, +/-, PIM, PPG, PPP, SHG, SHP, GWG, OTG, Shots)
+Teams(Team, City, TeamCode, GamesPlayed, Points, Wins, Losess, OvertimeLosses, Division, Conferences, StanleyCups)
