@@ -309,7 +309,7 @@ echo "</tr>";
 if(isset($_POST['deleteItem']) and is_numeric($_POST['deleteItem']))
 {
   // here comes your delete query: use $_POST['deleteItem'] as your id
-  // $delete = $_POST['deleteItem']
+  $delete = $_POST['deleteItem']
    $sql = "DELETE FROM `stats` where `playerId` = '$delete'"; 
 
 
