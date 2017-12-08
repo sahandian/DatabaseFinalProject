@@ -24,3 +24,9 @@ Teams(Team, City, TeamCode, GamesPlayed, Points, Wins, Losess, OvertimeLosses, D
 
 ## Crud
 Crud is utilized throughout the application. We hosted our database on infinityfree. Create is utilized using INSERT INTIO. Read is utlized when the page is loaded/refreshed and uses the SELECT Statement. Data is updated at the bottom of the page using UPDATE. Data is deleted using the DELETE sql statement. 
+
+## Video
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
